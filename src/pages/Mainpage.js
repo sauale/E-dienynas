@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
-import "./Mainpage.css";
+import "./css/Mainpage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Button,
@@ -10,10 +9,25 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
-export default class Header extends Component {
+export default class Mainpage extends Component {
   render() {
     return (
       <div>
+        <Navbar bg="white" expand="lg" className="Nav">
+          <Navbar.Brand href="#home" class="brand_name">
+            E-Dienynas
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Kontaktai</Nav.Link>
+              <Nav.Link href="#link">DUK</Nav.Link>
+            </Nav>
+            <Button variant="primary" size="lg" href="./Login">
+              Prisijungti
+            </Button>
+          </Navbar.Collapse>
+        </Navbar>
         <div class="Text">
           <h1>
             <strong>E-Dienynas</strong>

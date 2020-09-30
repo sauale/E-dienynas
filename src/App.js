@@ -1,6 +1,4 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Mainpage from "./Mainpage.js";
 import React, { Component } from "react";
 import {
   Button,
@@ -10,26 +8,29 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+
+import {
+  Link,
+  Switch,
+  Redirect,
+  Route,
+  BrowserRouter as Router,
+} from "react-router-dom";
+//PAGES
+import Mainpage from "./pages/Mainpage.js";
+import LoginPage from "./pages/LoginPage.js";
+import SendPasswordPagefrom from "./pages/SendPasswordPage.js";
+
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Navbar bg="white" expand="lg" className="Nav">
-          <Navbar.Brand href="#home">E-Dienynas</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#home">Kontaktai</Nav.Link>
-              <Nav.Link href="#link">DUK</Nav.Link>
-            </Nav>
-            <Button variant="primary" size="lg">
-              Prisijungti
-            </Button>
-          </Navbar.Collapse>
-        </Navbar>
-
-        <Mainpage />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Mainpage} />
+          <Route exact path="/Login" component={LoginPage} />
+          <Route exact path="/SendPassword" component={SendPasswordPagefrom} />
+        </Switch>
+      </Router>
     );
   }
 }
