@@ -1,0 +1,89 @@
+h1 {
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  color: gray;
+}
+
+.Text {
+  margin-right: 33%;
+  margin-left: 33%;
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.top-table {
+  background-color: white;
+  border-radius: 5px;
+  border-top-width: 4px;
+  border-top-color: red;
+  border-top-style: solid;
+  margin-top: 80px;
+  margin-right: 37%;
+  margin-left: 37%;
+  padding: 20px 30px 30px 30px;
+  height: 242px;
+  text-align: left;
+  position: relative;
+}
+
+.bottom-table {
+  background-color: white;
+  border-radius: 5px;
+  border-top-width: 4px;
+  border-top-color: hsl(34, 97%, 64%);
+  border-top-style: solid;
+  margin-top: 40px;
+  margin-right: 37%;
+  margin-left: 37%;
+  margin-bottom: 100px;
+  padding: 20px 30px 30px 30px;
+  height: 242px;
+  text-align: left;
+  position: relative;
+}
+
+.left-table {
+  background-color: white;
+  border-radius: 5px;
+  border-top-width: 4px;
+  border-top-color: hsl(180, 62%, 55%);
+  border-top-style: solid;
+  margin-top: 180px;
+  margin-right: 37%;
+  margin-left: 37%;
+  margin-bottom: 100px;
+  padding: 20px 30px 30px 30px;
+  height: 242px;
+  text-align: left;
+  position: relative;
+  bottom: 550px;
+  right: 430px;
+}
+
+.right-table {
+  background-color: white;
+  border-radius: 5px;
+  border-top-width: 4px;
+  border-top-color: hsl(212, 86%, 64%);
+  border-top-style: solid;
+  margin-top: 155px;
+  margin-right: 37%;
+  margin-left: 37%;
+  margin-bottom: 100px;
+  padding: 20px 30px 30px 30px;
+  height: 242px;
+  text-align: left;
+  position: relative;
+  bottom: 946px;
+  left: 430px;
+}
