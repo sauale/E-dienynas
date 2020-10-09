@@ -6,6 +6,9 @@
   margin-top: 100px;
   text-align: center;
 }
+.FormField__Link {
+  margin-left: 20px;
+}
 h1 {
   font-family: "Balsamiq Sans", serif;
 }
