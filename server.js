@@ -22,8 +22,11 @@ mongoose
   .catch((err) => console.log(err));
 
 var S_Workers = require("./routes/S_Workers");
-
 app.use("/s_workers", S_Workers);
+
+var Students = require("./routes/Students");
+app.use("/students", Students);
+
 app.listen(port, function () {
   console.log("Server is running on port: " + port);
 });

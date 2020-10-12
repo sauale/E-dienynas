@@ -19,3 +19,20 @@ export const login = (user) => {
       console.log(err);
     });
 };
+export const registerStud = (newStud) => {
+  return axios
+    .post("http://localhost:5000/students/registerStud", {
+      username: newStud.username,
+      password: newStud.password,
+      name: newStud.name,
+      surname: newStud.surname,
+      id: newStud.id,
+      class: newStud.class,
+      school: newStud.school,
+    })
+    .then((response) => {
+      if (response.data == "z") {
+        window.alert("Email jau egzistuoja");
+      }
+    });
+};

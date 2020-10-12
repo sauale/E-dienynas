@@ -1,17 +1,17 @@
 const express = require("express");
-const s_workers = express.Router();
+const students = express.Router();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-const User = require("../schemas/S_Worker");
-s_workers.use(cors());
+const Student = require("../schemas/Student");
 
+students.use(cors());
 
 process.env.SECRET_KEY = "secret";
 
-s_workers.get("/", function (req, res) {
-  User.find({})
+students.get("/", function (req, res) {
+ Student.find({})
     .then((data) => {
       console.log("Data: ", data);
       res.json(data);
@@ -21,38 +21,9 @@ s_workers.get("/", function (req, res) {
     });
 });
 
-s_workers.post("/login", (req, res) => {
-  User.findOne({
-    username: req.body.username,
-  })
-    .then((user) => {
-      if (user) {
-        if (bcrypt.compareSync(req.body.password, user.password)) {
-          // Passwords match
-          const payload = {
-            _id: user._id,
-            username: user.username,
-          };
-          let token = jwt.sign(payload, process.env.SECRET_KEY, {
-            expiresIn: 1440,
-          });
-          res.send(token);
-        } else {
-          // Passwords don't match
-          let kazkas = "z";
-          res.send(kazkas);
-        }
-      } else {
-        let kazkas = "z";
-        res.send(kazkas);
-      }
-    })
-    .catch((err) => {
-      res.send("error: " + err);
-    });
-});
 
-s_workers.post("/register", (req, res) => {
+
+students.post("/registerStud", (req, res) => {
   const date = new Date();
   const userData = {
     username: req.body.username,
@@ -91,4 +62,4 @@ s_workers.post("/register", (req, res) => {
       res.send("error: " + err);
     });
 });
-module.exports = s_workers;
+module.exports = students;

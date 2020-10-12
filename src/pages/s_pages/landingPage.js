@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import "./css/LoginPage.css";
-
+import "../css/LoginPage.css";
+import jwt_decode from "jwt-decode";
 import {
   Button,
   Navbar,
@@ -14,10 +14,38 @@ import {
   Col,
 } from "react-bootstrap";
 export default class Mainpage extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      username: ""
+    };
+  }
+
+  componentDidMount() {
+    const token = localStorage.usertoken;
+
+    const decoded = jwt_decode(token);
+    this.setState({
+      username: decoded.username,
+    })};
+
+
+    logOut(e) {
+      e.preventDefault();
+      localStorage.removeItem("usertoken");
+      window.location.href = "/";
+    }
+  
   render() {
     return (
-      <div class="container">
-        <h1>Landing Page</h1>
+      <div >
+        <h2>Landing Page</h2>
+        <a href="/addStudentPage">Pridėti mokinį</a>
+
+        <Button onClick={this.logOut.bind(this)} className="btn-landing">
+            Atsijungti
+          </Button>
       </div>
     );
   }

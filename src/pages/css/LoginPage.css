@@ -12,3 +12,8 @@
 h1 {
   font-family: "Balsamiq Sans", serif;
 }
+
+.btn-landing {
+  position: relative;
+  left: 1300px;
+}
