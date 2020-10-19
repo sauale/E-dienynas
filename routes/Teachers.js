@@ -1,17 +1,17 @@
 const express = require("express");
-const students = express.Router();
+const teachers = express.Router();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-const Student = require("../schemas/Student");
+const Teacher= require("../schemas/Teacher");
 
-students.use(cors());
+teachers.use(cors());
 
 process.env.SECRET_KEY = "secret";
 
-students.get("/", function (req, res) {
- Student.find({})
+teachers.get("/", function (req, res) {
+    Teacher.find({})
     .then((data) => {
       console.log("Data: ", data);
       res.json(data);
@@ -22,8 +22,8 @@ students.get("/", function (req, res) {
 });
 
 
-students.post("/login", (req, res) => {
-  Student.findOne({
+teachers.post("/login", (req, res) => {
+ Teacher.findOne({
     username: req.body.username,
   })
     .then((user) => {
@@ -56,8 +56,7 @@ students.post("/login", (req, res) => {
 });
 
 
-
-students.post("/registerStud", (req, res) => {
+teachers.post("/registerTeacher", (req, res) => {
   const date = new Date();
   const userData = {
     username: req.body.username,
@@ -65,19 +64,19 @@ students.post("/registerStud", (req, res) => {
     name: req.body.name,
     surname: req.body.surname,
     id: req.body.id,
-    class: req.body.class,
+    subject: req.body.subject,
     school: req.body.school,
     created: date,
   };
 
-  Student.findOne({
+  Teacher.findOne({
     username: req.body.username,
   })
     .then((user) => {
       if (!user) {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
           userData.password = hash;
-          Student.create(userData)
+          Teacher.create(userData)
             .then((user) => {
               res.json({ status: user.username + "Registered!" });
             })
@@ -96,4 +95,4 @@ students.post("/registerStud", (req, res) => {
       res.send("error: " + err);
     });
 });
-module.exports = students;
+module.exports = teachers;

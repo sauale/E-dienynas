@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/LoginPage.css";
+import "./css/LoginPage.css";
 import jwt_decode from "jwt-decode";
 import {
   Button,
@@ -40,10 +40,8 @@ export default class Mainpage extends Component {
   render() {
     return (
       <div >
-        <h2>Landing Page</h2>
-        <a href="/addStudentPage">Pridėti mokinį</a>
-        <br></br>
-        <a href="/addTeacherPage">Pridėti mokytoją</a>
+        <h2>Student Landing Page</h2>
+        
         <Button onClick={this.logOut.bind(this)} className="btn-landing">
             Atsijungti
           </Button>

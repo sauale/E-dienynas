@@ -36,3 +36,20 @@ export const registerStud = (newStud) => {
       }
     });
 };
+export const registerTeacher = (newTeacher) => {
+  return axios
+    .post("http://localhost:5000/teachers/registerTeacher", {
+      username: newTeacher.username,
+      password: newTeacher.password,
+      name: newTeacher.name,
+      surname: newTeacher.surname,
+      id: newTeacher.id,
+      subject: newTeacher.subject,
+      school: newTeacher.school,
+    })
+    .then((response) => {
+      if (response.data == "z") {
+        window.alert("Email jau egzistuoja");
+      }
+    });
+};

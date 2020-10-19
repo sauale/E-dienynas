@@ -24,6 +24,9 @@ import S_LoginPage from "./pages/S_LoginPage.js";
 import SendPasswordPagefrom from "./pages/SendPasswordPage.js";
 import landingPage from "./pages/s_pages/landingPage.js";
 import addStudentPage from "./pages/s_pages/addStudentPage.js";
+import addTeacherPage from "./pages/s_pages/addTeacherPage.js";
+import studLandingPage from "./pages/studLandingPage.js";
+import teacherLandingPage from "./pages/teacherLandingPage.js";
 
 export default class App extends Component {
   render() {
@@ -36,6 +39,9 @@ export default class App extends Component {
           <Route exact path="/S_Login" component={S_LoginPage} />
           <Route exact path="/S_landingPage" component={landingPage} />
           <Route exact path="/addStudentPage" component={addStudentPage} />
+          <Route exact path="/addTeacherPage" component={addTeacherPage} />
+          <Route exact path="/studLandingPage" component={studLandingPage} />
+          <Route exact path="/teacherLandingPage" component={teacherLandingPage} />
         </Switch>
       </Router>
     );
