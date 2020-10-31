@@ -1,0 +1,35 @@
+[33mcommit 3715253d7e9d1f51d0d8b3bd4c3738d5d14d8385[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: sauale <61204377+sauale@users.noreply.github.com>
+Date:   Mon Oct 19 19:26:32 2020 +0300
+
+    Finished register, login functions
+
+[33mcommit 412a963a25ec5582b413ea018a7f390cc0c701f1[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: sauale <61204377+sauale@users.noreply.github.com>
+Date:   Mon Oct 12 22:17:54 2020 +0300
+
+    add student registration
+
+[33mcommit 91c13a66dea4694df543c057dcfba8c3052fd42a[m
+Author: sauale <61204377+sauale@users.noreply.github.com>
+Date:   Fri Oct 9 18:14:20 2020 +0300
+
+    Started Backend
+
+[33mcommit 484cd4a1bc92242b3e054dbe9558d69655c66b33[m
+Author: sauale <61204377+sauale@users.noreply.github.com>
+Date:   Wed Sep 30 20:44:06 2020 +0300
+
+    Add Login page
+
+[33mcommit d89ecef720757dcdfd7c99fa1556c68222625189[m
+Author: sauale <61204377+sauale@users.noreply.github.com>
+Date:   Wed Sep 30 18:19:07 2020 +0300
+
+    Started Mainpage
+
+[33mcommit 52dd26f9c67edbb7802a30291d77130c9a045dad[m
+Author: sauale <61204377+sauale@users.noreply.github.com>
+Date:   Wed Sep 30 15:32:50 2020 +0300
+
+    Initialize project using Create React App

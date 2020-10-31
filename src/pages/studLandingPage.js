@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/LoginPage.css";
 import jwt_decode from "jwt-decode";
+import Header from "./Header.js";
 import {
   Button,
   Navbar,
@@ -40,11 +41,38 @@ export default class Mainpage extends Component {
   render() {
     return (
       <div >
-        <h2>Student Landing Page</h2>
-        
-        <Button onClick={this.logOut.bind(this)} className="btn-landing">
-            Atsijungti
-          </Button>
+       <Header/>
+
+        <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
+            >
+                <div className="sidebar-sticky"></div>
+            <Nav.Item>
+                <Nav.Link href="/studProfile">Asmeniniai duomenys</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Pažymiai</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Lankomumas</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Vidurkiai</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Tvarkaraštis</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Pastabos ir pagyrimai</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Namų darbai</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/home">Prisijungimo duomenys</Nav.Link>
+            </Nav.Item>
+          
+            </Nav>
+      
       </div>
     );
   }

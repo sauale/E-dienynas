@@ -27,7 +27,7 @@ import addStudentPage from "./pages/s_pages/addStudentPage.js";
 import addTeacherPage from "./pages/s_pages/addTeacherPage.js";
 import studLandingPage from "./pages/studLandingPage.js";
 import teacherLandingPage from "./pages/teacherLandingPage.js";
-
+import studProfile from "./pages/stud_pages/studProfile.js";
 export default class App extends Component {
   render() {
     return (
@@ -42,6 +42,7 @@ export default class App extends Component {
           <Route exact path="/addTeacherPage" component={addTeacherPage} />
           <Route exact path="/studLandingPage" component={studLandingPage} />
           <Route exact path="/teacherLandingPage" component={teacherLandingPage} />
+          <Route exact path="/studProfile" component={studProfile} />
         </Switch>
       </Router>
     );

@@ -35,6 +35,10 @@ students.post("/login", (req, res) => {
             username: user.username,
             name: user.name,
             surname: user.surname,
+            class: user.class,
+            school: user.school,
+            
+
           };
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
             expiresIn: 1440,
