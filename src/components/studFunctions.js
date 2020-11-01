@@ -19,3 +19,16 @@ export const login = (user) => {
         console.log(err);
       });
   };
+
+
+  export const change_Username = (new_username) =>{
+    return axios
+      .post("http://localhost:5000/students/changeUsername", {
+        username: new_username,
+      })
+      .then((response) => {
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }

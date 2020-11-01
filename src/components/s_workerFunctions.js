@@ -45,6 +45,7 @@ export const registerTeacher = (newTeacher) => {
       surname: newTeacher.surname,
       id: newTeacher.id,
       subject: newTeacher.subject,
+      classes: newTeacher.classes,
       school: newTeacher.school,
     })
     .then((response) => {

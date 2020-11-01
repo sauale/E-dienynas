@@ -26,7 +26,9 @@ const Teachers = new Schema({
   school: {
     type: String,
   },
-
+  classes:{
+    type:[String],
+  }
 });
 
 module.exports = Teacher = mongoose.model("teachers", Teachers);

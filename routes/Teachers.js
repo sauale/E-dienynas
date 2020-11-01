@@ -65,6 +65,7 @@ teachers.post("/registerTeacher", (req, res) => {
     surname: req.body.surname,
     id: req.body.id,
     subject: req.body.subject,
+    classes:req.body.classes,
     school: req.body.school,
     created: date,
   };

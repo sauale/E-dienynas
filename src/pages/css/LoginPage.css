@@ -17,3 +17,8 @@ h1 {
   position: relative;
   left: 1300px;
 }
+
+.btn2 {
+  margin-top: 100px;
+  text-align: center;
+}

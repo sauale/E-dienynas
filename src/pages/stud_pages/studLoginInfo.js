@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/LoginPage.css";
 import jwt_decode from "jwt-decode";
+import Header from "../Header.js";
 import {
   Button,
   Navbar,
@@ -13,12 +14,16 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-export default class Mainpage extends Component {
+import { decode } from "jsonwebtoken";
+export default class studLoginInfo extends Component {
 
   constructor() {
     super();
     this.state = {
-      username: ""
+        name: "",
+        surname: "",
+        class: "",
+        school: "",
     };
   }
 
@@ -27,7 +32,10 @@ export default class Mainpage extends Component {
 
     const decoded = jwt_decode(token);
     this.setState({
-      username: decoded.username,
+      name: decoded.name,
+      surname: decoded.surname,
+      class: decoded.class,
+      school: decoded.school,
     })};
 
 
@@ -39,16 +47,18 @@ export default class Mainpage extends Component {
   
   render() {
     return (
-      <div >
-        <h2>Landing Page</h2>
-        <a href="/addStudentPage">Pridėti mokinį</a>
-        <br></br>
-        <a href="/addTeacherPage">Pridėti mokytoją</a>
-        <br></br>
-        <a href="/selectTeacher">Mokytojų sarašas</a>
-        <Button onClick={this.logOut.bind(this)} className="btn-landing">
-            Atsijungti
+      <div>
+       <Header/>
+      <div class="btn2">
+       <Button variant="primary" href="/studLoginInfo/changeUsername">
+            Pakeisti slapyvardį
           </Button>
+
+          <Button variant="primary" type="submit">
+            Pakeisti slaptažodį
+          </Button>
+
+       </div>
       </div>
     );
   }

@@ -26,6 +26,7 @@ export default class Mainpage extends Component {
       surname: "",
       id: "",
       subject: "",
+      classes: "",
       school: "",
     };
 
@@ -62,6 +63,7 @@ export default class Mainpage extends Component {
             surname: this.state.surname,
             id: this.state.id,
             subject: this.state.subject,
+            classes: this.state.classes,
             school: this.state.school,
         };
     
@@ -135,6 +137,17 @@ export default class Mainpage extends Component {
               name="subject"
               className="user_input"
               value={this.state.subject}
+              onChange={this.onChange}
+            />
+             </Form.Group>
+
+             <Form.Group controlId="formBasicClass">
+            <Form.Control
+              type="classes"
+              placeholder="klasė"
+              name="classes"
+              className="user_input"
+              value={this.state.classes}
               onChange={this.onChange}
             />
              </Form.Group>

@@ -88,6 +88,7 @@ students.post("/registerStud", (req, res) => {
             .catch((err) => {
               res.send("error: " + err);
             });
+           
         });
       } else {
         // res.json({ error: "User already exists" });
@@ -100,4 +101,9 @@ students.post("/registerStud", (req, res) => {
       res.send("error: " + err);
     });
 });
+
+
+students.post("/changeUsername", function (req, res) {
+ 
+ });
 module.exports = students;
