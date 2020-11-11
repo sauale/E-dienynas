@@ -19,3 +19,18 @@ export const loginTeacher = (user) => {
         console.log(err);
       });
   };
+
+  export const getStudList = (clas,school) => {
+    return axios
+      .post("http://localhost:5000/students", {
+        claze: JSON.stringify(clas),
+        school: school
+      })
+      .then((response) => {
+          const data = response.data;
+          this.setState({ students: data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };

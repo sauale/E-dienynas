@@ -23,6 +23,9 @@ export default class changeUsername extends Component {
     this.state = {
         name: "",
         new_username:"",
+        username:"",
+        confirm_password : "",
+        password: "",
         surname: "",
         class: "",
         school: "",
@@ -41,6 +44,8 @@ export default class changeUsername extends Component {
       surname: decoded.surname,
       class: decoded.class,
       school: decoded.school,
+      username: decoded.username,
+      password: decoded.password
     })};
 
 
@@ -56,14 +61,17 @@ export default class changeUsername extends Component {
       onSubmit(e) {
         e.preventDefault();
         const user = {
-          username: this.state.new_username,
+          username: this.state.username,
+          new_username : this.state.new_username,
           password: this.state.password,
+          confirm_password: this.state.confirm_password
         };
         change_Username(user).then((res) =>{
             if (res) {
-                this.props.history.push(`/`);
+              window.location.href = "/";
                 window.location.reload();
               }
+        
         })
 
       }
@@ -91,8 +99,8 @@ export default class changeUsername extends Component {
               type="password"
               placeholder="Slaptažodis"
               className="user_input"
-              name="password"
-              value={this.state.password}
+              name="confirm_password"
+              value={this.state.confirm_password}
               onChange={this.onChange}
             />
           </Form.Group>

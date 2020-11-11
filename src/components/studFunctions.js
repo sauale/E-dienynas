@@ -21,12 +21,23 @@ export const login = (user) => {
   };
 
 
-  export const change_Username = (new_username) =>{
+  export const change_Username = (user) =>{
     return axios
       .post("http://localhost:5000/students/changeUsername", {
-        username: new_username,
+        username: user.username,
+        new_username : user.new_username,
+        password: user.password,
+        confirm_password: user.confirm_password
       })
       .then((response) => {
+        if (response.data == "z") {
+          alert("NETEISINGAS SLAPTAŽODIS")
+        }
+        else
+        {
+        window.location.href = "/";
+        alert("Prisijungimo vardas pakeistas. Prisijunkite iš naujo")
+        }
       })
       .catch((err) => {
         console.log(err);

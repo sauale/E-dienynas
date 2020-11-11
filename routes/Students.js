@@ -11,7 +11,11 @@ students.use(cors());
 process.env.SECRET_KEY = "secret";
 
 students.get("/", function (req, res) {
- Student.find({})
+ Student.find({
+  class: {$eq :req.body.clas}
+  // school: {$eq :req.body.school}
+
+  })
     .then((data) => {
       console.log("Data: ", data);
       res.json(data);
@@ -104,6 +108,38 @@ students.post("/registerStud", (req, res) => {
 
 
 students.post("/changeUsername", function (req, res) {
+   const filter = {username: req.body.username};
+   console.log(req.body.username)
+   console.log(req.body.password)
+   const updateDoc = {
+     $set:{
+       username: req.body.new_username
+     }
+   }
+
+   Student.findOne({
+    username: req.body.username,
+  })
+    .then((user) => {
+      if (user) {
+        
+        if (bcrypt.compareSync(req.body.confirm_password, user.password)){
+        Student.updateOne(filter,updateDoc)
+        .then((user) => {
+          res.json("Updated!");
+        })}
+        else{
+        let kazkas = "z";
+        res.send(kazkas);
+        }
+         } 
+    })
+    .catch((err) => {
+      res.send("error: " + err);
+    });
+
+
+
  
  });
 module.exports = students;

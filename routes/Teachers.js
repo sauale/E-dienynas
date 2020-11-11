@@ -35,6 +35,9 @@ teachers.post("/login", (req, res) => {
             username: user.username,
             name: user.name,
             surname: user.surname,
+            school: user.school,
+            subject: user.subject,
+            classes: user.classes
           };
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
             expiresIn: 1440,

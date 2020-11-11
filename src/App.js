@@ -31,6 +31,8 @@ import studProfile from "./pages/stud_pages/studProfile.js";
 import selectTeacher from "./pages/s_pages/selectTeacher.js";
 import studLoginInfo from "./pages/stud_pages/studLoginInfo.js";
 import changeUsername from "./pages/stud_pages/changeUsername.js";
+import teachProfile from "./pages/teach_pages/teachProfile.js";
+import studList from "./pages/teach_pages/studList.js";
 export default class App extends Component {
   render() {
     return (
@@ -49,6 +51,8 @@ export default class App extends Component {
           <Route exact path="/selectTeacher" component={selectTeacher} />
           <Route exact path="/studLoginInfo" component={studLoginInfo} />
           <Route exact path="/studLoginInfo/changeUsername" component={changeUsername} />
+          <Route exact path="/teachProfile" component={teachProfile} />
+          <Route exact path="/studList" component={studList} />
         </Switch>
       </Router>
     );
