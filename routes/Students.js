@@ -3,6 +3,10 @@ const students = express.Router();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+var bodyParser = require('body-parser');
+var app = express();
+
+app.use(bodyParser.json());
 
 const Student = require("../schemas/Student");
 
@@ -10,10 +14,11 @@ students.use(cors());
 
 process.env.SECRET_KEY = "secret";
 
-students.get("/", function (req, res) {
+students.post("/", function (req, res) {
+ console.log(req.body.clas)
  Student.find({
-  class: {$eq :req.body.clas}
-  // school: {$eq :req.body.school}
+  class: {$eq :req.body.clas},
+   school: {$eq :req.body.school}
 
   })
     .then((data) => {
@@ -21,12 +26,13 @@ students.get("/", function (req, res) {
       res.json(data);
     })
     .catch((error) => {
-      console.log("error: ", daerrorta);
+      console.log("error: ", error);
     });
 });
 
 
 students.post("/login", (req, res) => {
+  console.log(req.body.username)
   Student.findOne({
     username: req.body.username,
   })

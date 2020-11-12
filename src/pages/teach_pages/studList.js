@@ -58,10 +58,9 @@ export default class studList extends Component {
     }
 
     onClick(clas){
-            alert(clas.toString())
             return axios
-              .get("http://localhost:5000/students", {
-                clas: clas.toString(),
+              .post("http://localhost:5000/students/", {
+                clas: clas,
                 school: this.state.school
               })
               .then((response) => {
@@ -86,19 +85,25 @@ export default class studList extends Component {
          
          {this.state.classes.map(clas =>(
              
-             
-             <Dropdown.Item onClick={() => this.onClick({clas})} eventKey="option-2">{clas}</Dropdown.Item>
+              
+             <Dropdown.Item onClick={() => this.onClick(clas)} eventKey="option-2">{clas}</Dropdown.Item>
              
 
          ))}
        </DropdownButton>
-
-       <h1>{this.state.school}</h1>
        {this.state.students.map(stud=>(
-                  <h3>{stud.name}</h3>
-
-                  ))}
-
+         <div>
+                  <div>
+                  <h3>{stud.name} {stud.surname} {stud.class}</h3>
+                  </div>
+                  <div >
+                  <Button ></Button>
+                  </div>
+         </div>
+                  
+                  )) 
+          }
+        
      
       </div>
 

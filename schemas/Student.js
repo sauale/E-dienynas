@@ -6,11 +6,11 @@ const Schema = mongoose.Schema;
 const Students = new Schema({
   username: {
     type: String,
-    unique: true,
+    unique: true
   },
   password: {
     type: String,
-    required: true,
+    required: true
   },
   name: {
     type: String,
@@ -28,6 +28,8 @@ const Students = new Schema({
     type: String,
   },
 
-});
+}
+
+);
 
 module.exports = Student = mongoose.model("students", Students);
