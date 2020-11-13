@@ -1,6 +1,7 @@
 .user_input {
-  width: 30%;
+  width: 100%;
   margin: 0 auto;
+  padding-top: 5px;
 }
 .container {
   margin-top: 100px;
@@ -25,4 +26,31 @@ h1 {
 
 .studlist {
   display: inline-block;
+}
+
+.inline-form {
+  width: 100%;
+  display: block;
+}
+
+.inline-form .text-container {
+  display: inline-block !important;
+  width: 250px !important;
+  padding-right: 5px;
+}
+
+.inline-form .input-container {
+  display: inline-block !important;
+  width: 50px !important;
+  padding-right: 5px;
+}
+
+.inline-form .button-container {
+  display: inline-block !important;
+  width: auto !important;
+  height: 20px;
+}
+
+.inline-form .button-container button {
+  width: 100%;
 }

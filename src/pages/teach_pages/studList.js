@@ -16,7 +16,8 @@ import {
   Row,
   Col,
   DropdownButton,
-  Dropdown
+  Dropdown,
+  Alert
 
 } from "react-bootstrap";
 import { decode } from "jsonwebtoken";
@@ -32,8 +33,13 @@ export default class studList extends Component {
         subject: "",
         claze: "",
         students:[],
+        grade: ""
 
     };
+    this.onChange = this.onChange.bind(this);
+  }
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   componentDidMount() {
@@ -50,6 +56,8 @@ export default class studList extends Component {
 
     })};
 
+
+    
     
     logOut(e) {
       e.preventDefault();
@@ -75,6 +83,10 @@ export default class studList extends Component {
       
     }
 
+    sendMark(){
+      alert("nigs")
+    }
+
   
   render() {
     return (
@@ -92,13 +104,26 @@ export default class studList extends Component {
          ))}
        </DropdownButton>
        {this.state.students.map(stud=>(
-         <div>
-                  <div>
-                  <h3>{stud.name} {stud.surname} {stud.class}</h3>
+         <div class="inline-form">
+                  <div class="text-container">
+                    <h4>>{stud.name} {stud.surname}</h4>
                   </div>
-                  <div >
-                  <Button ></Button>
+
+                  <div class="input-container">
+                    <Form.Control
+                      type="name"
+                      placeholder=""
+                      className="user_input"
+                      name="grade"
+                      value={this.state.grade}
+                      onChange={this.onChange}
+                     />
                   </div>
+
+                  <div class="button-container" >
+                    <Button variant="primary" onClick={() => this.sendMark()} >Įrašyti pažymį</Button>
+                  </div>
+                
          </div>
                   
                   )) 
