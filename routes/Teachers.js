@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt");
 
 const Teacher= require("../schemas/Teacher");
 
+const Mark = require("../schemas/Mark");
+
 teachers.use(cors());
 
 process.env.SECRET_KEY = "secret";
@@ -20,6 +22,37 @@ teachers.get("/", function (req, res) {
       console.log("error: ", daerrorta);
     });
 });
+
+teachers.get("/marks", function (req, res) {
+  Mark.find({})
+  .then((data) => {
+    console.log("Data: ", data);
+    res.json(data);
+  })
+  .catch((error) => {
+    console.log("error: ", daerrorta);
+  });
+});
+
+
+teachers.post("/addMark", function(req,res){
+
+  const data = {
+    stud_id : req.body.stud_id,
+    Mark : req.body.stud_grade,
+    subject : req.body.stud_subject
+  }
+  console.log("Data: ", data);
+  Mark.create(data)
+  .then((user) => {
+    res.json({ status:"Registered!" });
+  })
+  .catch((err) => {
+    res.send("error: " + err);
+  });
+   
+
+})
 
 
 teachers.post("/login", (req, res) => {

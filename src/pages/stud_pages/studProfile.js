@@ -50,7 +50,7 @@ export default class studProfile extends Component {
       <div>
        <Header/>
 
-       <div class="container">
+       <div class="containerProfile">
         
        <Form>
            <Row>

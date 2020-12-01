@@ -58,7 +58,7 @@ export default class Mainpage extends Component {
   }
   render() {
     return (
-      <div class="container">
+      <div class="container" >
         <Form onSubmit={this.onSubmit}>
           <h1>E-Dienynas</h1>
           <Form.Group controlId="formBasicEmail">

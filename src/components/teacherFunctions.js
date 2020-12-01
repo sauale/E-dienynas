@@ -33,4 +33,16 @@ export const loginTeacher = (user) => {
       .catch((err) => {
         console.log(err);
       });
+
+  
+
+  };
+
+  export const AddMark = (stud,grade,subject) => {
+    return axios
+      .post("http://localhost:5000/teachers/addMark", {
+ 
+      })
+      
+
   };

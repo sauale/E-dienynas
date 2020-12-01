@@ -33,6 +33,7 @@ import studLoginInfo from "./pages/stud_pages/studLoginInfo.js";
 import changeUsername from "./pages/stud_pages/changeUsername.js";
 import teachProfile from "./pages/teach_pages/teachProfile.js";
 import studList from "./pages/teach_pages/studList.js";
+import addMarks from "./pages/teach_pages/addMarks.js";
 export default class App extends Component {
   render() {
     return (
@@ -53,6 +54,7 @@ export default class App extends Component {
           <Route exact path="/studLoginInfo/changeUsername" component={changeUsername} />
           <Route exact path="/teachProfile" component={teachProfile} />
           <Route exact path="/studList" component={studList} />
+          <Route exact path="/addMarks" component={addMarks} />
         </Switch>
       </Router>
     );

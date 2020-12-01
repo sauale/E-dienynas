@@ -52,6 +52,9 @@ export default class Mainpage extends Component {
             <Nav.Item>
                 <Nav.Link href="/studList">Mokinių peržiūra</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/addMarks">Pažymių įrašymas</Nav.Link>
+            </Nav.Item>
             
           
             </Nav>

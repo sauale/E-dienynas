@@ -4,7 +4,7 @@ import "../css/LoginPage.css";
 import jwt_decode from "jwt-decode";
 import Header from "../Header.js";
 import axios from "axios";
-import {getStudList} from "../../components/teacherFunctions";
+import {AddMark} from "../../components/teacherFunctions";
 import {
   Button,
   Navbar,
@@ -83,9 +83,27 @@ export default class studList extends Component {
       
     }
 
-    sendMark(){
-      alert("nigs")
+    AddMark(stud){
+        return axios
+              .post("http://localhost:5000/teachers/addMark", {
+                stud_id : stud.id,
+                stud_grade : this.state.grade,
+                stud_subject:  this.state.subject
+
+                 
+              })
+              .then((response) => {
+                  alert("liux")
+
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+
+
     }
+
+  
 
   
   render() {
@@ -103,13 +121,14 @@ export default class studList extends Component {
 
          ))}
        </DropdownButton>
+
        {this.state.students.map(stud=>(
          <div class="inline-form">
                   <div class="text-container">
                     <h4>{stud.name} {stud.surname}</h4>
                   </div>
 
-                  <div class="input-container">
+                <div class="input-container">
                     <Form.Control
                       type="name"
                       placeholder=""
@@ -121,9 +140,9 @@ export default class studList extends Component {
                   </div>
 
                   <div class="button-container" >
-                    <Button variant="primary" onClick={() => this.sendMark()} >Įrašyti pažymį</Button>
+                    <Button variant="primary" onClick={() => this.AddMark(stud)} >Įrašyti pažymį</Button>
                   </div>
-                
+       
          </div>
                   
                   )) 

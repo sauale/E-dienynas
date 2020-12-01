@@ -54,7 +54,7 @@ export default class TeachProfile extends Component {
       <div>
        <Header/>
 
-       <div class="container">
+       <div class="containerProfile">
         
        <Form>
            <Row>
