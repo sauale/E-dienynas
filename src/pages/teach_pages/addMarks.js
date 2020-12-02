@@ -93,7 +93,7 @@ export default class studList extends Component {
                  
               })
               .then((response) => {
-                  alert("liux")
+                  alert("Pažymys irašytas")
 
               })
               .catch((err) => {

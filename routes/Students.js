@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 
 const Student = require("../schemas/Student");
 
+const Mark = require("../schemas/Mark");
+
 students.use(cors());
 
 process.env.SECRET_KEY = "secret";
@@ -42,6 +44,7 @@ students.post("/login", (req, res) => {
           // Passwords match
           const payload = {
             _id: user._id,
+            id: user.id,
             username: user.username,
             name: user.name,
             surname: user.surname,
@@ -148,4 +151,18 @@ students.post("/changeUsername", function (req, res) {
 
  
  });
+
+ students.post("/getMark", function (req, res) {
+  Mark.find({})
+    .then((data) => {
+      console.log("Data: ", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log("error: ", daerrorta);
+    });
+});
+
+
+
 module.exports = students;

@@ -50,13 +50,13 @@ export default class Mainpage extends Component {
                 <Nav.Link href="/studProfile">Asmeniniai duomenys</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/home">Pažymiai</Nav.Link>
+                <Nav.Link href="/listGrades">Pažymiai</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/home">Lankomumas</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/home">Vidurkiai</Nav.Link>
+                <Nav.Link href="/listAverages">Vidurkiai</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/home">Tvarkaraštis</Nav.Link>
