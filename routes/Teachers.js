@@ -8,6 +8,8 @@ const Teacher= require("../schemas/Teacher");
 
 const Mark = require("../schemas/Mark");
 
+const Homework = require("../schemas/Homework");
+
 teachers.use(cors());
 
 process.env.SECRET_KEY = "secret";
@@ -44,6 +46,28 @@ teachers.post("/addMark", function(req,res){
   }
   console.log("Data: ", data);
   Mark.create(data)
+  .then((user) => {
+    res.json({ status:"Registered!" });
+  })
+  .catch((err) => {
+    res.send("error: " + err);
+  });
+   
+
+})
+
+
+teachers.post("/addHomework", function(req,res){
+
+  const data = {
+    class : req.body.class,
+    date : req.body.date,
+    subject : req.body.subject,
+    uzd : req.body.uzd,
+    school : req.body.school,
+  }
+  console.log("Data: ", data);
+  Homework.create(data)
   .then((user) => {
     res.json({ status:"Registered!" });
   })

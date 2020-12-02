@@ -162,7 +162,7 @@ export default class listAverages extends Component {
                <h5>Anglų kalba</h5>
                </td>
                 <td style={{color: 'red',}}>
-                {this.displayAverages(this.state.grades,'Geografija')}
+                {this.displayAverages(this.state.grades,'Anglų kalba')}
                 </td>
             </tr> 
             <tr>
@@ -170,7 +170,7 @@ export default class listAverages extends Component {
                <h5>Lietuvių kalba</h5>
                </td>
                 <td style={{color: 'red',}}>
-                {this.displayAverages(this.state.grades,'Geografija')}
+                {this.displayAverages(this.state.grades,'Lietuvių kalba')}
                 </td>
             </tr> 
 

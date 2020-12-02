@@ -109,20 +109,7 @@ export default class studList extends Component {
                     <h4>{stud.name} {stud.surname}</h4>
                   </div>
 
-                  <div class="input-container">
-                    <Form.Control
-                      type="name"
-                      placeholder=""
-                      className="user_input"
-                      name="grade"
-                      value={this.state.grade}
-                      onChange={this.onChange}
-                     />
-                  </div>
-
-                  <div class="button-container" >
-                    <Button variant="primary" onClick={() => this.sendMark()} >Įrašyti pažymį</Button>
-                  </div>
+    
                 
          </div>
                   

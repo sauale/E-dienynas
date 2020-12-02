@@ -38,11 +38,21 @@ export const loginTeacher = (user) => {
 
   };
 
-  export const AddMark = (stud,grade,subject) => {
-    return axios
-      .post("http://localhost:5000/teachers/addMark", {
- 
-      })
-      
 
+  export const AddHomework= (data) => {
+    return axios
+      .post("http://localhost:5000/teachers/addHomework", {
+        class : data.class,
+        date : data.date,
+        subject : data.subject,
+        uzd : data.uzd,
+        school : data.school,
+      })
+      .then((response) => {
+        alert("liux")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
