@@ -37,6 +37,7 @@ import addMarks from "./pages/teach_pages/addMarks.js";
 import listGrades from "./pages/stud_pages/listGrades.js";
 import listAverages from "./pages/stud_pages/listAverages.js";
 import addHomework from "./pages/teach_pages/addHomework.js";
+import listHomework from "./pages/stud_pages/listHomework.js";
 export default class App extends Component {
   render() {
     return (
@@ -61,6 +62,7 @@ export default class App extends Component {
           <Route exact path="/listGrades" component={listGrades} />
           <Route exact path="/listAverages" component={listAverages} />
           <Route exact path="/addHomework" component={addHomework } />
+          <Route exact path="/listHomework" component={listHomework } />
           
         </Switch>
       </Router>

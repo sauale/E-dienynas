@@ -12,6 +12,8 @@ const Student = require("../schemas/Student");
 
 const Mark = require("../schemas/Mark");
 
+
+const Homework = require("../schemas/Homework");
 students.use(cors());
 
 process.env.SECRET_KEY = "secret";
@@ -163,6 +165,18 @@ students.post("/changeUsername", function (req, res) {
     });
 });
 
+students.post("/getHomework", function (req, res) {
+  console.log(req.body.clas)
+  Homework.find({
+  })
+    .then((data) => {
+      console.log("Data: ", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log("error: ", daerrorta);
+    });
+});
 
 
 module.exports = students;
