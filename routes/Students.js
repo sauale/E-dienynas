@@ -16,6 +16,8 @@ const Mark = require("../schemas/Mark");
 const Homework = require("../schemas/Homework");
 
 const Remark = require("../schemas/Remark");
+
+const Schedule = require("../schemas/Schedule");
 students.use(cors());
 
 process.env.SECRET_KEY = "secret";
@@ -192,6 +194,21 @@ students.post("/getRemarks", function (req, res) {
       console.log("error: ", daerrorta);
     });
 });
+
+
+students.post("/getSchedule", function (req, res) {
+  console.log(req.body.clas)
+  Schedule.find({
+  })
+    .then((data) => {
+      console.log("Data: ", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log("error: ", daerrorta);
+    });
+});
+
 
 
 module.exports = students;

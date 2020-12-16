@@ -41,6 +41,7 @@ import listHomework from "./pages/stud_pages/listHomework.js";
 import addRemarks from "./pages/teach_pages/addRemarks.js";
 import listRemarks from "./pages/stud_pages/listRemarks.js";
 import addSchedule from "./pages/s_pages/addSchedule.js";
+import viewSchedule from "./pages/stud_pages/viewSchedule.js";
 export default class App extends Component {
   render() {
     return (
@@ -69,6 +70,7 @@ export default class App extends Component {
           <Route exact path="/addRemarks" component={addRemarks} />
           <Route exact path="/listRemarks" component={listRemarks} />
           <Route exact path="/addSchedule" component={addSchedule} />
+          <Route exact path="/viewSchedule" component={viewSchedule} />
         </Switch>
       </Router>
     );
