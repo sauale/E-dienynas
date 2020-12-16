@@ -75,17 +75,38 @@ export default class listHomework extends Component {
   
   render() {
     return (
+
       <div>
        <Header/>
 
-       <h1>{this.state.class}</h1>
+
+       <table class="table table-bordered table-dark " style={{width : '50%'}}>
+
+          <tr>
+              <th>Dalykas</th>
+              <th>Užduotis</th>
+              <th>Atlikti iki</th>
+          </tr>
+        
        {this.state.homework.filter(work => work.class == this.state.class &&  work.school == this.state.school ).map(work => (
-                            <h5 style={{display:'inline-block'}}>{work.uzd},</h5> 
-                            
-                            
-                        ))}
+
+         <tr>
+    
+           <td>
+           <h5>{work.subject}</h5>
+           </td>
+           <td>                   
+           <h5>{work.uzd}</h5>
+           </td>
+           <td>                  
+           <h5>{work.date.slice(0,10)}</h5>  
+           </td>
+    
+        </tr>
+                          ))}                 
 
     
+       </table>
       </div>
 
     

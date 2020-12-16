@@ -46,6 +46,8 @@ export default class Mainpage extends Component {
         <a href="/addTeacherPage">Pridėti mokytoją</a>
         <br></br>
         <a href="/selectTeacher">Mokytojų sarašas</a>
+        <br></br>
+        <a href="/addSchedule ">Pridėti tvarkaraštį</a>
         <Button onClick={this.logOut.bind(this)} className="btn-landing">
             Atsijungti
           </Button>

@@ -56,3 +56,20 @@ export const loginTeacher = (user) => {
       });
   };
 
+
+  export const AddRemark= (data) => {
+    return axios
+      .post("http://localhost:5000/teachers/addRemark", {
+        stud_id : data.id,
+        remark : data.remark,
+        type : data.type,
+        subject : data.subject
+      })
+      .then((response) => {
+        alert("liux")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+

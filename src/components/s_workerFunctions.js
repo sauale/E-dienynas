@@ -54,3 +54,21 @@ export const registerTeacher = (newTeacher) => {
       }
     });
 };
+
+export const AddSchedule = (newSchedule) => {
+  return axios
+    .post("http://localhost:5000/s_workers/addSchedule", {
+      class: newSchedule.class,
+      school: newSchedule.school,
+      monday: newSchedule.monday,
+      tuesday: newSchedule.tuesday,
+      wednesday: newSchedule.wednesday,
+      thursday: newSchedule.thursday,
+      friday: newSchedule.friday
+    })
+    .then((response) => {
+      if (response.data == "z") {
+        window.alert("Email jau egzistuoja");
+      }
+    });
+};

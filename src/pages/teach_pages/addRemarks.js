@@ -4,7 +4,7 @@ import "../css/LoginPage.css";
 import jwt_decode from "jwt-decode";
 import Header from "../Header.js";
 import axios from "axios";
-import {AddHomework} from "../../components/teacherFunctions";
+import {AddRemark} from "../../components/teacherFunctions";
 import {
   Button,
   Navbar,
@@ -22,7 +22,7 @@ import {
 } from "react-bootstrap";
 import { decode } from "jsonwebtoken";
 import { set } from "mongoose";
-export default class addHomework extends Component {
+export default class addRemarks extends Component {
 
   constructor() {
     super();
@@ -38,28 +38,37 @@ export default class addHomework extends Component {
         dropdownTitle: "",
         date: "",
         uzd: "",
+        studname: "Pasirinkti mokinį",
+        stud_id: "",
+        remark: "",
+        option: ""
 
 
     };
     this.onChange = this.onChange.bind(this);
+    this.onValueChange = this.onValueChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+  onValueChange(e) {
+    this.setState({
+      option: e.target.value
+    });
   }
 
   onSubmit(e) {
     e.preventDefault();
 
     const data = {
-        class: this.state.dropdownTitle,
-        date: this.state.date,
-        subject: this.state.subject,
-        uzd: this.state.uzd,
-        school: this.state.school
+        id: this.state.stud_id,
+        remark: this.state.remark,
+        type: this.state.option,
+        subject: this.state.subject
       };
 
-      AddHomework(data).then((res) => {
+      AddRemark(data).then((res) => {
       });
 
 
@@ -76,7 +85,7 @@ export default class addHomework extends Component {
       classes: decoded.classes,
       school: decoded.school,
       subject: decoded.subject,
-      dropdownTitle: 'Pasirinkti klasę'
+      dropdownTitle: 'Pasirinkti klasę',
 
     })};
 
@@ -92,9 +101,28 @@ export default class addHomework extends Component {
     onClick(clas){
          
         this.setState({dropdownTitle: clas})
+
+        return axios
+              .post("http://localhost:5000/students/", {
+                clas: this.state.dropdownTitle,
+                school: this.state.school
+              })
+              .then((response) => {
+                  const data = response.data;
+                  this.setState({ students: data });
+                
+              })
+              .catch((err) => {
+                console.log(err);
+              });
         
 
       
+    }
+    onClickStud(name,id){
+         
+        this.setState({studname: name })
+        this.setState({stud_id: id  })
     }
 
     AddMark(stud){
@@ -126,11 +154,11 @@ export default class addHomework extends Component {
        <Header/>
     <Form onSubmit={this.onSubmit}>
        <div style={{textAlign: 'center'}}>
-        <h1>Pridėti namų darbą</h1>
+        <h1>Pridėti pagyrimą/pastabą</h1>
 
         <div >
 
-        <DropdownButton id="dropdown-menu-align-right" title={this.state.dropdownTitle}>
+        <DropdownButton  id="dropdown-menu-align-right "title={this.state.dropdownTitle}>
          
          {this.state.classes.map(clas =>(
              
@@ -142,21 +170,59 @@ export default class addHomework extends Component {
 
          ))}
        </DropdownButton>
-        <h4>Atlikti iki:</h4>
-       <input type="date" id="start" name="date" value={this.state.date}  onChange={this.onChange}
-       min="2020-01-01" max="2021-12-31"/>
+
+        <br></br>
+       <DropdownButton id="dropdown-menu-align-right" title={this.state.studname} >
+         
+         {this.state.students.map(stud =>(
+             
+              
+             <Dropdown.Item onClick={() => this.onClickStud(stud.name,stud.id)} eventKey="option-2">{stud.name}  { stud.surname}</Dropdown.Item>
+
+             
+             
+
+         ))}
+       </DropdownButton>
+   
        </div>
        <br/>
+     <div>
+       <div className="radio-inline"  >
+          <label>
+            <input
+              type="radio"
+              value="Pagyrimas"
+              checked={this.state.option === "Pagyrimas"}
+              onChange={this.onValueChange}
+            />
+            Pagyrimas
+          </label>
+       </div>
+       <div className="radio-inline">
+          <label>
+            <input
+              type="radio"
+              value="Pastaba"
+              checked={this.state.option === "Pastaba"}
+              onChange={this.onValueChange}
+            />
+            Pastaba
+          </label>
+       </div>    
+    </div>
+        <textarea placeholder="Pridėti pastabą/pagyrimą" rows="4" cols="50" id="start" name="remark" value={this.state.remark}  onChange={this.onChange}/>
 
 
-        
-        <textarea placeholder="Pridėti užduotį" rows="4" cols="50" id="start" name="uzd" value={this.state.uzd}  onChange={this.onChange}/>
        
         <br/>
         <Button variant="primary" type="submit">
             Siųsti
           </Button>
+
+
       </div>
+
       </Form>
       </div>
 

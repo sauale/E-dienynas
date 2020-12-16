@@ -62,7 +62,7 @@ export default class Mainpage extends Component {
                 <Nav.Link href="/home">Tvarkaraštis</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/home">Pastabos ir pagyrimai</Nav.Link>
+                <Nav.Link href="/listRemarks">Pastabos ir pagyrimai</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/listHomework">Namų darbai</Nav.Link>

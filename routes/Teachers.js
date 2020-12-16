@@ -10,6 +10,8 @@ const Mark = require("../schemas/Mark");
 
 const Homework = require("../schemas/Homework");
 
+const Remark = require("../schemas/Remark");
+
 teachers.use(cors());
 
 process.env.SECRET_KEY = "secret";
@@ -77,6 +79,30 @@ teachers.post("/addHomework", function(req,res){
    
 
 })
+teachers.post("/addRemark", function(req,res){
+
+  const data = {
+    stud_id: req.body.stud_id,
+    remark: req.body.remark,
+    type: req.body.type,
+    subject: req.body.subject,
+  }
+  console.log("Data: ", data);
+  Remark.create(data)
+  .then((user) => {
+    res.json({ status:"Registered!" });
+  })
+  .catch((err) => {
+    res.send("error: " + err);
+  });
+   
+
+})
+
+
+
+
+
 
 
 teachers.post("/login", (req, res) => {

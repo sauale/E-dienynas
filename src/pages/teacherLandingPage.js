@@ -58,6 +58,9 @@ export default class Mainpage extends Component {
             <Nav.Item>
                 <Nav.Link href="/addHomework">Namų darbų uždavimas</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/addRemarks">Pridėti pagyrimą/pastabą</Nav.Link>
+            </Nav.Item>
             
           
             </Nav>

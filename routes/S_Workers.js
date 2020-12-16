@@ -5,6 +5,10 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 const User = require("../schemas/S_Worker");
+
+const Schedule = require("../schemas/Schedule");
+
+
 s_workers.use(cors());
 
 
@@ -91,4 +95,30 @@ s_workers.post("/register", (req, res) => {
       res.send("error: " + err);
     });
 });
+
+s_workers.post("/addSchedule", function(req,res){
+
+  const data = {
+    class: req.body.class,
+    school: req.body.school,
+    monday: req.body.monday,
+    tuesday: req.body.tuesday,
+    wednesday: req.body.wednesday,
+    thursday: req.body.thursday,
+    friday: req.body.friday
+  }
+  console.log("Data: ", data);
+  Schedule.create(data)
+  .then((user) => {
+    res.json({ status:"Registered!" });
+  })
+  .catch((err) => {
+    res.send("error: " + err);
+  });
+   
+
+})
+
+
+
 module.exports = s_workers;
