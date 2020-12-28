@@ -49,14 +49,16 @@ export default class studProfile extends Component {
     return (
       <div>
        <Header/>
-
+       <h3 style={{textAlign:"center"}}>Asmeniniai duomenys</h3>
        <div class="containerProfile">
+
+        
         
        <Form>
            <Row>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Vardas
               </Form.Label>
              <Col sm="10">
@@ -66,7 +68,7 @@ export default class studProfile extends Component {
            </Col>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Pavardė
               </Form.Label>
              <Col sm="10">
@@ -77,35 +79,11 @@ export default class studProfile extends Component {
           </Row>
         </Form>
 
-       <Form>
-           <Row>
-             <Col>
-             <Form.Group as={Row} controlId="formPlaintextEmail">
-              <Form.Label column sm="2">
-               Adresas
-              </Form.Label>
-             <Col sm="10">
-             <Form.Control  defaultValue="adresasExample" />
-             </Col>
-           </Form.Group>
-             </Col>
-             <Col>
-             <Form.Group as={Row} controlId="formPlaintextEmail">
-              <Form.Label column sm="2">
-               Email
-              </Form.Label>
-             <Col sm="10">
-             <Form.Control  defaultValue="emailExample" />
-             </Col>
-           </Form.Group>
-             </Col>
-            </Row>
-        </Form>
         <Form>
            <Row>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Klasė
               </Form.Label>
              <Col sm="10">
@@ -115,7 +93,7 @@ export default class studProfile extends Component {
            </Col>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Mokykla
               </Form.Label>
              <Col sm="10">
@@ -127,9 +105,7 @@ export default class studProfile extends Component {
         </Form>
 
 
-        <Button variant="primary" type="submit">
-            Išsaugoti
-          </Button>
+   
     
         </div>
 

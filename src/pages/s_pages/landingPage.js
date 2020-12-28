@@ -40,7 +40,7 @@ export default class Mainpage extends Component {
   render() {
     return (
       <div >
-        <h2>Landing Page</h2>
+        <h2>Mokyklos administratoriaus Meniu</h2>
         <a href="/addStudentPage">Pridėti mokinį</a>
         <br></br>
         <a href="/addTeacherPage">Pridėti mokytoją</a>

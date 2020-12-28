@@ -42,7 +42,7 @@ export default class Mainpage extends Component {
     return (
       <div >
        <Header/>
-
+      {/*}
         <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
             >
                 <div className="sidebar-sticky"></div>
@@ -72,7 +72,7 @@ export default class Mainpage extends Component {
             </Nav.Item>
           
             </Nav>
-      
+    */}
       </div>
     );
   }

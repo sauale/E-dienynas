@@ -92,7 +92,7 @@ export default class Mainpage extends Component {
 
         <br></br>
         <a href="/S_Login" className="FormField__Link">
-          Prisijungimas sistemos darbuotojui
+          Prisijungimas mokyklos administratoriui
         </a>
         <br></br>
         <a href="/" className="FormField__Link">

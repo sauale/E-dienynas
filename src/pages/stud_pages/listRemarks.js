@@ -87,7 +87,7 @@ export default class listHomework extends Component {
         if(this.state.test=="pagyrimas"){
             return (
                 <div>
-                    <table class="table table-bordered table-dark " style={{width : '50%'}}>
+                    <table class="table table-bordered  table-striped  " style={{width : '50%'}}>
 
                         <tr>
                             <th>Dalykas</th>
@@ -115,7 +115,7 @@ export default class listHomework extends Component {
         if(this.state.test=="pastaba"){
             return(
                 <div>
-                 <table class="table table-bordered table-dark " style={{width : '50%'}}>
+                 <table class="table table-bordered  table-striped  " style={{width : '50%'}}>
 
                         <tr>
                             <th>Dalykas</th>

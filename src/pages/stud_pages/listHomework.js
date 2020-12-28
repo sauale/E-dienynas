@@ -80,7 +80,7 @@ export default class listHomework extends Component {
        <Header/>
 
 
-       <table class="table table-bordered table-dark " style={{width : '50%'}}>
+       <table class="table table-bordered  table-striped " style={{width : '50%'}}>
 
           <tr>
               <th>Dalykas</th>

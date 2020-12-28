@@ -102,7 +102,7 @@ students.post("/registerStud", (req, res) => {
           userData.password = hash;
           Student.create(userData)
             .then((user) => {
-              res.json({ status: user.username + "Registered!" });
+              res.json({ status: user.username + "Užregistruotas" });
             })
             .catch((err) => {
               res.send("error: " + err);
@@ -110,8 +110,7 @@ students.post("/registerStud", (req, res) => {
            
         });
       } else {
-        // res.json({ error: "User already exists" });
-
+   
         let kazkas = "z";
         res.send(kazkas);
       }

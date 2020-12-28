@@ -5,8 +5,11 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 const User = require("../schemas/S_Worker");
+const Teacher = require("../schemas/Teacher");
 
 const Schedule = require("../schemas/Schedule");
+
+
 
 
 s_workers.use(cors());
@@ -85,8 +88,6 @@ s_workers.post("/register", (req, res) => {
             });
         });
       } else {
-        // res.json({ error: "User already exists" });
-
         let kazkas = "z";
         res.send(kazkas);
       }
@@ -118,6 +119,28 @@ s_workers.post("/addSchedule", function(req,res){
    
 
 })
+
+
+
+s_workers.post("/deleteTeacher", function(req,res){
+
+  const data = {
+    delId : req.body.id
+  }
+
+
+  console.log("Data: ", data);
+  Teacher.deleteOne({id:data.delId})
+  .then((user) => {
+    res.json({ status:"Registered!" });
+  })
+  .catch((err) => {
+    res.send("error: " + err);
+  });
+   
+
+})
+
 
 
 

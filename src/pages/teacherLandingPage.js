@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/LoginPage.css";
 import jwt_decode from "jwt-decode";
-import Header from "./Header.js";
+import Header from "./HeaderTeach.js";
 import {
   Button,
   Navbar,
@@ -42,30 +42,7 @@ export default class Mainpage extends Component {
     return (
       <div >
         <Header />
-
-        <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
-            >
-                <div className="sidebar-sticky"></div>
-            <Nav.Item>
-                <Nav.Link href="/teachProfile">Asmeniniai duomenys</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/studList">Mokinių peržiūra</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/addMarks">Pažymių įrašymas</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/addHomework">Namų darbų uždavimas</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/addRemarks">Pridėti pagyrimą/pastabą</Nav.Link>
-            </Nav.Item>
-            
-          
-            </Nav>
-      
-
+    
       </div>
     );
   }

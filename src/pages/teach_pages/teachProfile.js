@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/LoginPage.css";
 import jwt_decode from "jwt-decode";
-import Header from "../Header.js";
+import Header from "../HeaderTeach.js";
 import {
   Button,
   Navbar,
@@ -53,14 +53,14 @@ export default class TeachProfile extends Component {
     return (
       <div>
        <Header/>
-
+       <h3 style={{textAlign:"center"}}>Asmeniniai duomenys</h3>
        <div class="containerProfile">
         
        <Form>
            <Row>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}} column sm="2">
           Vardas
               </Form.Label>
              <Col sm="10">
@@ -70,7 +70,7 @@ export default class TeachProfile extends Component {
            </Col>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Pavardė
               </Form.Label>
              <Col sm="10">
@@ -81,35 +81,11 @@ export default class TeachProfile extends Component {
           </Row>
         </Form>
 
-       <Form>
-           <Row>
-             <Col>
-             <Form.Group as={Row} controlId="formPlaintextEmail">
-              <Form.Label column sm="2">
-               Adresas
-              </Form.Label>
-             <Col sm="10">
-             <Form.Control  defaultValue="adresasExample" />
-             </Col>
-           </Form.Group>
-             </Col>
-             <Col>
-             <Form.Group as={Row} controlId="formPlaintextEmail">
-              <Form.Label column sm="2">
-               Email
-              </Form.Label>
-             <Col sm="10">
-             <Form.Control  defaultValue="emailExample" />
-             </Col>
-           </Form.Group>
-             </Col>
-            </Row>
-        </Form>
         <Form>
            <Row>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Klasės
               </Form.Label>
              <Col sm="10">
@@ -119,7 +95,7 @@ export default class TeachProfile extends Component {
            </Col>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
+         <Form.Label style={{color:"gray"}}  column sm="2">
           Mokykla
               </Form.Label>
              <Col sm="10">
@@ -134,8 +110,8 @@ export default class TeachProfile extends Component {
            <Row>
            <Col>
            <Form.Group as={Row} controlId="formPlaintextEmail">
-         <Form.Label column sm="2">
-     Mokomas Dalykas
+         <Form.Label style={{color:"gray"}}  column sm="2">
+          Mokomas Dalykas
               </Form.Label>
              <Col sm="10">
              <Form.Control plaintext readOnly defaultValue={this.state.subject} />
@@ -146,9 +122,7 @@ export default class TeachProfile extends Component {
         </Form>
 
 
-        <Button variant="primary" type="submit">
-            Išsaugoti
-          </Button>
+       
     
         </div>
 

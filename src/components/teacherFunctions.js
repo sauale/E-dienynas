@@ -49,7 +49,7 @@ export const loginTeacher = (user) => {
         school : data.school,
       })
       .then((response) => {
-        alert("liux")
+        alert("įrašyta")
       })
       .catch((err) => {
         console.log(err);
@@ -66,7 +66,7 @@ export const loginTeacher = (user) => {
         subject : data.subject
       })
       .then((response) => {
-        alert("liux")
+        alert("Pagyrima/Pastaba įrašyta")
       })
       .catch((err) => {
         console.log(err);

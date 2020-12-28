@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/LoginPage.css";
 import jwt_decode from "jwt-decode";
-import Header from "../Header.js";
+import Header from "../HeaderTeach.js";
 import axios from "axios";
 import {AddHomework} from "../../components/teacherFunctions";
 import {

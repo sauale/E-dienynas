@@ -75,7 +75,7 @@ export default class Mainpage extends Component {
     return (
         <div class="container">
         <Form onSubmit={this.onSubmit}>
-          <h1>Prideti mokiny</h1>
+          <h1>Prideti mokinį</h1>
           <Form.Group controlId="formBasicUsername">
             <Form.Control
               type="username"

@@ -95,7 +95,7 @@ export default class listAverages extends Component {
        <Header/>
 
 
-       <table class="table table-bordered table-dark " style={{width : '20%'}}>
+       <table class="table table-bordered  table-striped  " style={{width : '20%'}}>
 
             <tr>
                 <th>Dalykas</th>

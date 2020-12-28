@@ -72,3 +72,17 @@ export const AddSchedule = (newSchedule) => {
       }
     });
 };
+
+export const DeleteTeacher = (TeachId) => {
+  return axios
+    .post("http://localhost:5000/s_workers/deleteTeacher", {
+      id: TeachId,
+    })
+    .then((response) => {
+      if (response.data == "z") {
+        window.alert("Email jau egzistuoja");
+      }
+    });
+};
+
+

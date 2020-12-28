@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/LoginPage.css";
 import axios from "axios";
 
-import {registerTeacher} from "../../components/s_workerFunctions";
+import {DeleteTeacher} from "../../components/s_workerFunctions";
 import jwt_decode from "jwt-decode";
 import {
   Button,
@@ -26,7 +26,15 @@ export default class Mainpage extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick (Teachid) {
+    DeleteTeacher(Teachid).then((res) => {
+      alert("Ištrinta")
+    });
   }
 
   componentDidMount() {
@@ -58,32 +66,14 @@ export default class Mainpage extends Component {
         this.setState({ [e.target.name]: e.target.value });
       }
 
-      onSubmit(e) {
-        e.preventDefault();
-    
-        const newUser = {
-            username: this.state.username,
-            password: this.state.password,
-            name: this.state.name,
-            surname: this.state.surname,
-            id: this.state.id,
-            subject: this.state.subject,
-            school: this.state.school,
-        };
-    
-        registerTeacher(newUser).then((res) => {
-          this.props.history.push(`/S_landingPage`);
-        });
-      }
-
       displayResults = (teachers) => {
         return teachers.map((teacher) => {
             return (
-              <div>
-                <table>
-                  <tbody>
-                    <a href="/" onClick=""><tr>
-                      <td className="LeaderUser">
+          
+                
+             
+                    <tr>
+                      <td >
                         <h3>{teacher.name}</h3>
                       </td>
                       <td className="LeaderUser">
@@ -95,10 +85,10 @@ export default class Mainpage extends Component {
                       <td className="LeaderUser">
                         <h3>{teacher.subject}</h3>
                       </td>
-                    </tr></a>
-                  </tbody>
-                </table>
-              </div>
+                    </tr>
+            
+                
+          
             );
           
         });
@@ -111,11 +101,38 @@ export default class Mainpage extends Component {
         <h1>Mokytojų sarašas</h1>
 
 
-        <table className="ProfileTable">
-          <tr>
-            <td className="LeaderUser1">{this.displayResults(this.state.teachers)}</td>
-          </tr>          
-        </table>  
+        <table style={{width : "70%"}} class="table table-striped">
+          
+        <tr>
+             <th>Vardas</th>
+             <th>Pavardė</th>
+             <th>Mokykla</th>
+             <th>Dalykas</th>
+             <th></th>                 
+          </tr>
+
+
+          {this.state.teachers.map(teacher=> (
+            <tr>
+            <td >
+              <h3>{teacher.name}</h3>
+            </td>
+            <td className="LeaderUser">
+              <h3>{teacher.surname}</h3>
+            </td>
+            <td className="LeaderUser">
+              <h3>{teacher.school}</h3>
+            </td>
+            <td className="LeaderUser">
+              <h3>{teacher.subject}</h3>
+            </td>
+            <td>
+            <button type="button" class="btn btn-danger" onClick={() => this.onClick(teacher.id)}>Šalinti</button>
+            </td>
+          </tr>
+
+          ))}
+         </table>
       </div>
 
     );

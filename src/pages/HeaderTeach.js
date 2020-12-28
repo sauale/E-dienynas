@@ -4,7 +4,7 @@ import "./css/LoginPage.css";
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import jwt_decode from "jwt-decode";
-import { SidebarData } from './SidebarData';
+import { SidebarData } from './SidebarDataTeacher';
 import { IconContext } from 'react-icons';
 import './css/Navbar.css';
 import * as AiIcons from 'react-icons/ai';
@@ -69,7 +69,7 @@ export default function Header() {
           </Navbar.Brand>
 
           <Nav className="mr-auto">
-              <Nav.Link href="/studLandingPage">Pradžia</Nav.Link>
+              <Nav.Link href="/teacherLandingPage">Pradžia</Nav.Link>
               <Nav.Link href="#link">DUK</Nav.Link>
               <Nav.Link href="#link">Kontaktai</Nav.Link>
               <Nav.Link href="#link">Atsiliepimai</Nav.Link>

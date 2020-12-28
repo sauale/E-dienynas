@@ -76,7 +76,7 @@ export default class studProfile extends Component {
     
 
         
-        <table class="table table-bordered table-dark " >
+        <table class="table table-bordered  table-striped  " >
 
             <tr>
                 <th>Dalykas</th>
