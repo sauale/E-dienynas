@@ -27,6 +27,9 @@ teachers.get("/", function (req, res) {
     });
 });
 
+
+
+
 teachers.get("/marks", function (req, res) {
   Mark.find({})
   .then((data) => {
@@ -172,7 +175,6 @@ teachers.post("/registerTeacher", (req, res) => {
             });
         });
       } else {
-        // res.json({ error: "User already exists" });
 
         let kazkas = "z";
         res.send(kazkas);

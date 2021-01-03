@@ -141,6 +141,25 @@ s_workers.post("/deleteTeacher", function(req,res){
 
 })
 
+s_workers.post("/deleteStud", function(req,res){
+
+  const data = {
+    delId : req.body.id
+  }
+
+
+  console.log("Data: ", data);
+  Student.deleteOne({id:data.delId})
+  .then((user) => {
+    res.json({ status:"Registered!" });
+  })
+  .catch((err) => {
+    res.send("error: " + err);
+  });
+   
+
+})
+
 
 
 

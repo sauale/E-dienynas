@@ -84,29 +84,16 @@ export default class listAverages extends Component {
         });
       };
 
-
-
-
-
-  
   render() {
     return (
       <div>
        <Header/>
-
-
        <table class="table table-bordered  table-striped  " style={{width : '20%'}}>
 
             <tr>
                 <th>Dalykas</th>
                 <th>Vidurkis</th>
             </tr>
-
-
-
-
-
-
 
            <tr>
                <td>

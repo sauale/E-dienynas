@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/LoginPage.css";
 import axios from "axios";
 
-import {DeleteTeacher} from "../../components/s_workerFunctions";
+import {DeleteStud} from "../../components/s_workerFunctions";
 import jwt_decode from "jwt-decode";
 import {
   Button,
@@ -16,12 +16,13 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-export default class Mainpage extends Component {
+//import students from "../../../routes/Students";
+export default class selectStud extends Component {
 
   constructor() {
     super();
     this.state = {
-      teachers: [],
+      students: [],
 
     };
 
@@ -31,8 +32,8 @@ export default class Mainpage extends Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick (Teachid) {
-    DeleteTeacher(Teachid).then((res) => {
+  onClick (Studid) {
+    DeleteStud(Studid).then((res) => {
       alert("Ištrinta")
       window.location.reload();
     });
@@ -41,10 +42,10 @@ export default class Mainpage extends Component {
   componentDidMount() {
 
     axios
-      .get("http://localhost:5000/teachers")
+      .get("http://localhost:5000/students")
       .then((response) => {
         const data = response.data;
-        this.setState({ teachers: data });
+        this.setState({ students: data });
       })
       .catch(() => {
         alert("ERROR");
@@ -85,22 +86,22 @@ export default class Mainpage extends Component {
           </tr>
 
 
-          {this.state.teachers.map(teacher=> (
+          {this.state.students.map(student=> (
             <tr>
             <td >
-              <h3>{teacher.name}</h3>
+              <h3>{student.name}</h3>
             </td>
             <td className="LeaderUser">
-              <h3>{teacher.surname}</h3>
+              <h3>{student.surname}</h3>
             </td>
             <td className="LeaderUser">
-              <h3>{teacher.school}</h3>
+              <h3>{student.school}</h3>
             </td>
             <td className="LeaderUser">
-              <h3>{teacher.subject}</h3>
+              <h3>{student.class}</h3>
             </td>
             <td>
-            <button type="button" class="btn btn-danger" onClick={() => this.onClick(teacher.id)}>Šalinti</button>
+            <button type="button" class="btn btn-danger" onClick={() => this.onClick(student.id)}>Šalinti</button>
             </td>
           </tr>
 

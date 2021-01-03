@@ -84,11 +84,6 @@ export default class studProfile extends Component {
             </tr>
 
 
-
-
-
-
-
            <tr>
                <td>
                <h5>Istorija</h5>

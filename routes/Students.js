@@ -39,6 +39,18 @@ students.post("/", function (req, res) {
 });
 
 
+students.get("/", function (req, res) {
+  Student.find({})
+  .then((data) => {
+    console.log("Data: ", data);
+    res.json(data);
+  })
+  .catch((error) => {
+    console.log("error: ", daerrorta);
+  });
+});
+
+
 students.post("/login", (req, res) => {
   console.log(req.body.username)
   Student.findOne({
@@ -47,7 +59,6 @@ students.post("/login", (req, res) => {
     .then((user) => {
       if (user) {
         if (bcrypt.compareSync(req.body.password, user.password)) {
-          // Passwords match
           const payload = {
             _id: user._id,
             id: user.id,
@@ -64,7 +75,6 @@ students.post("/login", (req, res) => {
           });
           res.send(token);
         } else {
-          // Passwords don't match
           let kazkas = "z";
           res.send(kazkas);
         }

@@ -32,7 +32,7 @@ export const registerStud = (newStud) => {
     })
     .then((response) => {
       if (response.data == "z") {
-        window.alert("Email jau egzistuoja");
+        window.alert("mokinys jau egzistuoja");
       }
     });
 };
@@ -50,7 +50,7 @@ export const registerTeacher = (newTeacher) => {
     })
     .then((response) => {
       if (response.data == "z") {
-        window.alert("Email jau egzistuoja");
+        window.alert("mokytojas jau egzistuoja");
       }
     });
 };
@@ -79,10 +79,16 @@ export const DeleteTeacher = (TeachId) => {
       id: TeachId,
     })
     .then((response) => {
-      if (response.data == "z") {
-        window.alert("Email jau egzistuoja");
-      }
     });
 };
 
+
+export const DeleteStud = (StudId) => {
+  return axios
+    .post("http://localhost:5000/s_workers/deleteStud", {
+      id: StudId,
+    })
+    .then((response) => {
+    });
+};
 
